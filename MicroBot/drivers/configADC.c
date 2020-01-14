@@ -78,6 +78,11 @@ void configADC_LeeADC(MuestrasADC *datos)
 	xQueueReceive(cola_adc,datos,portMAX_DELAY);
 }
 
+void configADC_ResetQueue()
+{
+    xQueueReset(cola_adc);
+}
+
 void configADC_ISR(void)
 {
 	portBASE_TYPE higherPriorityTaskWoken=pdFALSE;

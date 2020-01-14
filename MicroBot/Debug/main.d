@@ -2,18 +2,18 @@
 
 main.obj: ../main.c
 main.obj: ../system_lib.h
-main.obj: /opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/stdbool.h
-main.obj: /opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/stdint.h
-main.obj: /opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/sys/stdint.h
-main.obj: /opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/sys/cdefs.h
-main.obj: /opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/sys/_types.h
-main.obj: /opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/machine/_types.h
-main.obj: /opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/machine/_stdint.h
-main.obj: /opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/sys/_stdint.h
-main.obj: /opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/stdlib.h
-main.obj: /opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/_ti_config.h
-main.obj: /opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/linkage.h
-main.obj: /opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/string.h
+main.obj: /home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/stdbool.h
+main.obj: /home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/stdint.h
+main.obj: /home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/sys/stdint.h
+main.obj: /home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/sys/cdefs.h
+main.obj: /home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/sys/_types.h
+main.obj: /home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/machine/_types.h
+main.obj: /home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/machine/_stdint.h
+main.obj: /home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/sys/_stdint.h
+main.obj: /home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/stdlib.h
+main.obj: /home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/_ti_config.h
+main.obj: /home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/linkage.h
+main.obj: /home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/string.h
 main.obj: ../inc/hw_memmap.h
 main.obj: ../inc/hw_types.h
 main.obj: ../inc/hw_ints.h
@@ -34,7 +34,7 @@ main.obj: ../driverlib/adc.h
 main.obj: ../driverlib/timer.h
 main.obj: ../driverlib/pwm.h
 main.obj: /home/andres/workspace_v8/MicroBot/FreeRTOS/Source/include/FreeRTOS.h
-main.obj: /opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/stddef.h
+main.obj: /home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/stddef.h
 main.obj: /home/andres/workspace_v8/MicroBot/FreeRTOSConfig.h
 main.obj: /home/andres/workspace_v8/MicroBot/utils/RunTimeStatsConfig.h
 main.obj: /home/andres/workspace_v8/MicroBot/FreeRTOS/Source/include/projdefs.h
@@ -51,26 +51,26 @@ main.obj: ../drivers/configADC.h
 main.obj: ../drivers/buttons.h
 main.obj: ../utils/cpu_usage.h
 main.obj: ../utils/uartstdio.h
-main.obj: /opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/stdarg.h
+main.obj: /home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/stdarg.h
 main.obj: /home/andres/workspace_v8/MicroBot/tiva_tasks.h
 main.obj: /home/andres/workspace_v8/MicroBot/system_lib.h
-main.obj: /opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/stdlib.h
+main.obj: /home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/stdlib.h
 main.obj: /home/andres/workspace_v8/MicroBot/bot_motion.h
 
 ../main.c: 
 ../system_lib.h: 
-/opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/stdbool.h: 
-/opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/stdint.h: 
-/opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/sys/stdint.h: 
-/opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/sys/cdefs.h: 
-/opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/sys/_types.h: 
-/opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/machine/_types.h: 
-/opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/machine/_stdint.h: 
-/opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/sys/_stdint.h: 
-/opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/stdlib.h: 
-/opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/_ti_config.h: 
-/opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/linkage.h: 
-/opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/string.h: 
+/home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/stdbool.h: 
+/home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/stdint.h: 
+/home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/sys/stdint.h: 
+/home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/sys/cdefs.h: 
+/home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/sys/_types.h: 
+/home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/machine/_types.h: 
+/home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/machine/_stdint.h: 
+/home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/sys/_stdint.h: 
+/home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/stdlib.h: 
+/home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/_ti_config.h: 
+/home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/linkage.h: 
+/home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/string.h: 
 ../inc/hw_memmap.h: 
 ../inc/hw_types.h: 
 ../inc/hw_ints.h: 
@@ -91,7 +91,7 @@ main.obj: /home/andres/workspace_v8/MicroBot/bot_motion.h
 ../driverlib/timer.h: 
 ../driverlib/pwm.h: 
 /home/andres/workspace_v8/MicroBot/FreeRTOS/Source/include/FreeRTOS.h: 
-/opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/stddef.h: 
+/home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/stddef.h: 
 /home/andres/workspace_v8/MicroBot/FreeRTOSConfig.h: 
 /home/andres/workspace_v8/MicroBot/utils/RunTimeStatsConfig.h: 
 /home/andres/workspace_v8/MicroBot/FreeRTOS/Source/include/projdefs.h: 
@@ -108,8 +108,8 @@ main.obj: /home/andres/workspace_v8/MicroBot/bot_motion.h
 ../drivers/buttons.h: 
 ../utils/cpu_usage.h: 
 ../utils/uartstdio.h: 
-/opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/stdarg.h: 
+/home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/stdarg.h: 
 /home/andres/workspace_v8/MicroBot/tiva_tasks.h: 
 /home/andres/workspace_v8/MicroBot/system_lib.h: 
-/opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/stdlib.h: 
+/home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/stdlib.h: 
 /home/andres/workspace_v8/MicroBot/bot_motion.h: 

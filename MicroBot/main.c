@@ -5,7 +5,6 @@
 //  Asignatura: Microbotica
 //  Grado en Ingeniería de Sistemas Electronicos
 //*****************************************************************************
-
 #include "system_lib.h"
 #include <tiva_tasks.h>
 #include "bot_motion.h"
@@ -16,6 +15,7 @@ uint32_t g_ulSystemClock;
 
 // RTIs headers
 void ButtonHandler(void);
+void PortAHandler(void);
 
 // Utility Functions
 void system_config();
@@ -26,9 +26,11 @@ void delayMS(uint32_t ms) {
 
 // Extern Functions
 extern void ButtonsTask( void *pvParameters );
+extern void PortATask( void *pvParameters );
+extern void ReactiveTask( void *pvParameters );
 extern void ADCTask( void *pvParameters );
+extern void SensorTask( void *pvParameters );
 extern void GeneralTask( void *pvParameters );
-extern void TimerTask( void *pvParameters );
 
 
 int main(void){
@@ -37,11 +39,19 @@ int main(void){
     UARTprintf("Hello! Tiva Working...\n");
 
     // Buttons Task
-    if((xTaskCreate(ButtonsTask, (portCHAR *)"Buttons", 256, NULL, tskIDLE_PRIORITY + 1, NULL) != pdTRUE)) while(1);
+    //if((xTaskCreate(ButtonsTask, (portCHAR *)"Buttons", 256, NULL, tskIDLE_PRIORITY + 1, NULL) != pdTRUE)) while(1);
+    // Port A Task
+    //if((xTaskCreate(PortATask, (portCHAR *)"Buttons", 256, NULL, tskIDLE_PRIORITY + 1, NULL) != pdTRUE)) while(1);
     // ADC Task
-    if((xTaskCreate(ADCTask, (portCHAR *)"ADC", 256, NULL, tskIDLE_PRIORITY + 1, NULL) != pdTRUE)) while(1);
+    //if((xTaskCreate(ADCTask, (portCHAR *)"ADC", 256, NULL, tskIDLE_PRIORITY + 1, NULL) != pdTRUE)) while(1);
     // General Task
     //if((xTaskCreate(GeneralTask, (portCHAR *)"General", 256, NULL, tskIDLE_PRIORITY + 1, NULL) != pdTRUE)) while(1);
+
+    // Reactive Task
+    if((xTaskCreate(ReactiveTask, (portCHAR *)"Reactive", 256, NULL, tskIDLE_PRIORITY + 1, NULL) != pdTRUE)) while(1);
+    // Sensor Task
+    //if((xTaskCreate(SensorTask, (portCHAR *)"General", 256, NULL, tskIDLE_PRIORITY + 1, NULL) != pdTRUE)) while(1);
+
 
     // Start scheduler
 	vTaskStartScheduler();
@@ -151,6 +161,16 @@ void system_config(){
     //PWMOutputState(PWM1_BASE, PWM_OUT_5_BIT | PWM_OUT_6_BIT | PWM_OUT_7_BIT, true);
     PWMOutputState(PWM1_BASE, PWM_OUT_6_BIT | PWM_OUT_7_BIT, true);    // Only PF1, PF2 and PF3
 
+    // Enable Port A
+    IntRegister(INT_GPIOA, PortAHandler);
+    GPIOPinTypeGPIOInput(GPIO_PORTA_BASE, GPIO_PIN_2|GPIO_PIN_3);
+    GPIOIntTypeSet(GPIO_PORTA_BASE, GPIO_PIN_2|GPIO_PIN_3, GPIO_BOTH_EDGES);
+    IntPrioritySet(INT_GPIOA,configMAX_SYSCALL_INTERRUPT_PRIORITY);
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
+    SysCtlPeripheralSleepEnable(SYSCTL_PERIPH_GPIOA);
+    GPIOIntEnable(GPIO_PORTA_BASE,GPIO_PIN_2|GPIO_PIN_3);
+    IntEnable(INT_GPIOA);
+
     IntMasterEnable();
 }
 
@@ -174,13 +194,38 @@ void ButtonHandler(void){
 
     if(xQueueSendFromISR(buttonsQueue, buttons, &xHigherPriorityTaskWoken) == errQUEUE_FULL){
 
-        while(1);
+        //while(1);
 
     }
     portEND_SWITCHING_ISR(xHigherPriorityTaskWoken);
 
 }
 
+void PortAHandler(void){
+
+    GPIOIntDisable(GPIO_PORTA_BASE,GPIO_PIN_2|GPIO_PIN_3);
+    GPIOIntClear(GPIO_PORTA_BASE,GPIO_PIN_2|GPIO_PIN_3);
+
+//    BaseType_t xHigherPriorityTaskWoken;
+    signed portBASE_TYPE xHigherPriorityTaskWoken;
+    xHigherPriorityTaskWoken = pdFALSE;
+
+    bool buttons[3];
+
+    buttons[0]=( 0 == GPIOPinRead(GPIO_PORTA_BASE, GPIO_PIN_2) );
+    buttons[1]=( 0 == GPIOPinRead(GPIO_PORTA_BASE, GPIO_PIN_3) );
+    buttons[2]= 0;
+    //delayMS(200);
+    GPIOIntEnable(GPIO_PORTA_BASE,GPIO_PIN_2|GPIO_PIN_3);
+
+    if(xQueueSendFromISR(portAQueue, buttons, &xHigherPriorityTaskWoken) == errQUEUE_FULL){
+
+        //while(1);
+
+    }
+    portEND_SWITCHING_ISR(xHigherPriorityTaskWoken);
+
+}
 
 
 

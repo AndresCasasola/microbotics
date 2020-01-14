@@ -1,14 +1,14 @@
 # FIXED
 
 drivers/configADC.obj: ../drivers/configADC.c
-drivers/configADC.obj: /opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/stdint.h
-drivers/configADC.obj: /opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/sys/stdint.h
-drivers/configADC.obj: /opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/sys/cdefs.h
-drivers/configADC.obj: /opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/sys/_types.h
-drivers/configADC.obj: /opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/machine/_types.h
-drivers/configADC.obj: /opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/machine/_stdint.h
-drivers/configADC.obj: /opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/sys/_stdint.h
-drivers/configADC.obj: /opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/stdbool.h
+drivers/configADC.obj: /home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/stdint.h
+drivers/configADC.obj: /home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/sys/stdint.h
+drivers/configADC.obj: /home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/sys/cdefs.h
+drivers/configADC.obj: /home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/sys/_types.h
+drivers/configADC.obj: /home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/machine/_types.h
+drivers/configADC.obj: /home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/machine/_stdint.h
+drivers/configADC.obj: /home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/sys/_stdint.h
+drivers/configADC.obj: /home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/stdbool.h
 drivers/configADC.obj: /home/andres/workspace_v8/MicroBot/inc/hw_memmap.h
 drivers/configADC.obj: /home/andres/workspace_v8/MicroBot/inc/hw_types.h
 drivers/configADC.obj: /home/andres/workspace_v8/MicroBot/inc/hw_ints.h
@@ -22,7 +22,7 @@ drivers/configADC.obj: /home/andres/workspace_v8/MicroBot/driverlib/adc.h
 drivers/configADC.obj: /home/andres/workspace_v8/MicroBot/driverlib/timer.h
 drivers/configADC.obj: ../drivers/configADC.h
 drivers/configADC.obj: /home/andres/workspace_v8/MicroBot/FreeRTOS/Source/include/FreeRTOS.h
-drivers/configADC.obj: /opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/stddef.h
+drivers/configADC.obj: /home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/stddef.h
 drivers/configADC.obj: /home/andres/workspace_v8/MicroBot/FreeRTOSConfig.h
 drivers/configADC.obj: /home/andres/workspace_v8/MicroBot/driverlib/rom_map.h
 drivers/configADC.obj: /home/andres/workspace_v8/MicroBot/utils/RunTimeStatsConfig.h
@@ -36,14 +36,14 @@ drivers/configADC.obj: /home/andres/workspace_v8/MicroBot/FreeRTOS/Source/includ
 drivers/configADC.obj: /home/andres/workspace_v8/MicroBot/FreeRTOS/Source/include/queue.h
 
 ../drivers/configADC.c: 
-/opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/stdint.h: 
-/opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/sys/stdint.h: 
-/opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/sys/cdefs.h: 
-/opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/sys/_types.h: 
-/opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/machine/_types.h: 
-/opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/machine/_stdint.h: 
-/opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/sys/_stdint.h: 
-/opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/stdbool.h: 
+/home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/stdint.h: 
+/home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/sys/stdint.h: 
+/home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/sys/cdefs.h: 
+/home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/sys/_types.h: 
+/home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/machine/_types.h: 
+/home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/machine/_stdint.h: 
+/home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/sys/_stdint.h: 
+/home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/stdbool.h: 
 /home/andres/workspace_v8/MicroBot/inc/hw_memmap.h: 
 /home/andres/workspace_v8/MicroBot/inc/hw_types.h: 
 /home/andres/workspace_v8/MicroBot/inc/hw_ints.h: 
@@ -57,7 +57,7 @@ drivers/configADC.obj: /home/andres/workspace_v8/MicroBot/FreeRTOS/Source/includ
 /home/andres/workspace_v8/MicroBot/driverlib/timer.h: 
 ../drivers/configADC.h: 
 /home/andres/workspace_v8/MicroBot/FreeRTOS/Source/include/FreeRTOS.h: 
-/opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/stddef.h: 
+/home/andres/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include/stddef.h: 
 /home/andres/workspace_v8/MicroBot/FreeRTOSConfig.h: 
 /home/andres/workspace_v8/MicroBot/driverlib/rom_map.h: 
 /home/andres/workspace_v8/MicroBot/utils/RunTimeStatsConfig.h: 

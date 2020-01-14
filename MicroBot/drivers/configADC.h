@@ -32,6 +32,7 @@ typedef struct
 void configADC_ISR(void);
 void configADC_DisparaADC(void);
 void configADC_LeeADC(MuestrasADC *datos);
+void configADC_ResetQueue();
 void configADC_IniciaADC(void);
 void configADC_ADCSet8BitResolution(void);
 void configADC_ADCSet12BitResolution(void);
