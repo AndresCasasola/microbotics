@@ -1,7 +1,8 @@
 
 #include "tiva_tasks.h"
 
-#define BOT_SPEED   180
+#define BOT_SPEED       180
+#define BOT_STOP_SPEED  90
 
 // Functions
 void SensorTask( void *pvParameters );
@@ -16,33 +17,38 @@ portTASK_FUNCTION(ReactiveTask, pvParameters ){
 
     // Start bot
     botStop();
-    botGoStraight(180);
+    botGoStraight(BOT_SPEED);
 
     if ((portAQueue = xQueueCreate(MAX_BUTTONS_QUEUE_ELEMENTS, 3*sizeof(bool))) == NULL ){
         while(1);
     }
     bool buttons[3];
 
-    while(1){
+    // Run SensorTask with xHandle handler
+    if((xTaskCreate(SensorTask, (portCHAR *)"General", 256, NULL, tskIDLE_PRIORITY + 1, &xHandle) != pdTRUE)) while(1);
 
-        // Run SensorTask with xHandle handler
-        if((xTaskCreate(SensorTask, (portCHAR *)"General", 256, NULL, tskIDLE_PRIORITY + 1, &xHandle) != pdTRUE)) while(1);
+    while(1){
 
         // Waiting for encoder data
         xQueueReceive(portAQueue, (void *) buttons, portMAX_DELAY);
 
-        // Kill SensorTask
-        vTaskDelete(xHandle);
-
         // Action
         if (buttons[1] == 0){           // PA3
             //UARTprintf("Boton2\n");   // Debug
+
+            // Kill SensorTask
+            vTaskDelete(xHandle);
+
             botStop();
             botRotateRight();
             SysCtlDelay( (SysCtlClockGet()/(3*1000))*1070 );    // Rotate 180 degrees
-            botGoStraight(180);
+            botGoStraight(BOT_SPEED);
+
+            // Run SensorTask with xHandle handler
+            if((xTaskCreate(SensorTask, (portCHAR *)"General", 256, NULL, tskIDLE_PRIORITY + 1, &xHandle) != pdTRUE)) while(1);
         }
 
+        xQueueReset(portAQueue);
     }
 }
 
@@ -55,7 +61,13 @@ portTASK_FUNCTION(SensorTask,pvParameters){
     configADC_TimerStart();
     configADC_TimerSetFrequency(10);
 
+    // Reset ADC queue
+    configADC_ResetQueue();
+
     while(1){
+
+        // Start bot
+        botGoStraight(BOT_SPEED);
 
         // Read ADC
         configADC_LeeADC(&muestras);
@@ -69,7 +81,7 @@ portTASK_FUNCTION(SensorTask,pvParameters){
         while(ch1 < map_41ADC[n]){
             n++;                    // Ahora n tiene el valor de la posicion inferior del array (i-1 es el superior)
         }
-        uint8_t big = 0;            // Bigger value,
+        uint8_t big = 0;            // Bigger value
         //uint8_t sma = 0;          // Smaller value
         big = map_41CM[n];
         //sma = map_41CM[n-1];
@@ -98,9 +110,10 @@ portTASK_FUNCTION(SensorTask,pvParameters){
             botGoStraight(BOT_SPEED);
         }
 
-        if(big <= (map_41CM[11])){      // 20 cm
-            botStop();
-        }
+        //if(big <= (map_41CM[11])){      // 20 cm
+            //botStop();
+            //SysCtlDelay( (SysCtlClockGet()/(3*1000))*500 );     // Sleep
+        //}
 
         // Reset ADC queue
         configADC_ResetQueue();
